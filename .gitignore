@@ -1,6 +1,7 @@
 # Development
 .idea
 nobe.iml
+nbproject
 
 # Tools
 node_modules
