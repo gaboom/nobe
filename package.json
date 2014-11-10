@@ -1,0 +1,32 @@
+{
+  "name": "nobe",
+  "version": "0.0.0",
+  "description": "Simple DSL Runner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaboom/nobe.git"
+  },
+  "keywords": [
+    "behavioural",
+    "dsl",
+    "imperative",
+    "declarative",
+    "test",
+    "runner"
+  ],
+  "author": "Gábor Czigola <gab@gablog.eu>",
+  "license": "GNU GPL v3.0",
+  "bugs": {
+    "url": "https://github.com/gaboom/nobe/issues"
+  },
+  "homepage": "https://github.com/gaboom/nobe",
+  "dependencies": {
+    "marked": "~0.3.2",
+    "glob": "~4.0.6",
+    "minimist": "~1.1.0"
+  }
+}
