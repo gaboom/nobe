@@ -1,10 +1,10 @@
 {
   "name": "nobe",
   "version": "0.0.0",
-  "description": "Simple DSL Runner",
-  "main": "index.js",
+  "description": "Simple DSL runner",
+  "main": "nobe.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,12 @@
   "dependencies": {
     "marked": "~0.3.2",
     "glob": "~4.0.6",
-    "minimist": "~1.1.0"
+    "minimist": "~1.1.0",
+    "extend": "~2.0.0",
+    "q": "~1.1.1"
+  },
+  "devDependencies": {
+    "mocha": "~2.0.1",
+    "jshint": "~2.5.10"
   }
 }
