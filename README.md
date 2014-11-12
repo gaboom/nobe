@@ -21,9 +21,10 @@ Roadmap (v0.1)
 Roadmap (v0.2)
 ---
 
-- tests and coverage
+- jshint, tests and coverage
 - tags, meta (pre-/postconditions, disabled/draft, template/atom)
 - director (runner) respects meta
+- assert actors
 - $scope, parameters, return values
 
 Roadmap (v0.3)

@@ -19,6 +19,8 @@
     "runner"
   ],
   "author": "Gábor Czigola <gab@gablog.eu>",
+  "contributors": [
+  ],
   "license": "GNU GPL v3.0",
   "bugs": {
     "url": "https://github.com/gaboom/nobe/issues"
