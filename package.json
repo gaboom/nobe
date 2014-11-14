@@ -1,7 +1,7 @@
 {
   "name": "nobe",
   "version": "0.0.0",
-  "description": "Simple DSL runner",
+  "description": "Simple DSL runner for task automation.",
   "main": "nobe.js",
   "scripts": {
     "test": "mocha"
@@ -19,8 +19,7 @@
     "runner"
   ],
   "author": "Gábor Czigola <gab@gablog.eu>",
-  "contributors": [
-  ],
+  "contributors": [],
   "license": "GNU GPL v3.0",
   "bugs": {
     "url": "https://github.com/gaboom/nobe/issues"
@@ -30,8 +29,8 @@
     "marked": "~0.3.2",
     "glob": "~4.0.6",
     "minimist": "~1.1.0",
-    "extend": "~2.0.0",
-    "q": "~1.1.1"
+    "q": "~1.1.1",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
     "mocha": "~2.0.1",
