@@ -13,6 +13,9 @@ Motivation
 --
 
 Task automation should:
+- Easy to adopt
+- Simple to extend
+- Level and scope agnostic
 - Not require syntax and semantics of a Turing complete programming language.
 - Not require behavioural syntax nor given-when-then structure.
 - Not depend on any (unit) test framework.
@@ -21,9 +24,10 @@ Roadmap (v0.1)
 ---
 
 - argument/config parser (DONE)
-- Markdown story parser
-- Story -> Scenario mapping
-- Step implementations
+- Markdown interpreter
+- Scenario mapper
+- Actor implementation
+- Step matcher, perform
 - nobe Director runner
 - console reporter
 - node module
