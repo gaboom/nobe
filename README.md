@@ -3,9 +3,9 @@ nobe
 
 Simple DSL runner for task automation. Rationale:
 
-- Write stories in simple text.
-- Stories are composed of steps. Stories can be re-used to compose other stories.
-- Enact stories in different scenarios by performing actors' matching steps.
+- Write scenarios in simple text step by step.
+- Scenarios can compose other scenarios.
+- Perform scenarios by matching actors' steps.
 
 Want to discuss or have a question? Raise an Issue!
 
