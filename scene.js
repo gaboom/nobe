@@ -7,8 +7,8 @@ var glob = require('glob');
 var DEFAULTS = {
 	'actors': [],
 	'interpreter': './interpreters/markdown',
-	'stacktrace': true,
-	'stories': './stories/**/*.md'
+	'observers': [],
+	'scenarios': './scenarios/**/*.md'
 };
 
 module.exports.Scene = {
@@ -18,7 +18,7 @@ module.exports.Scene = {
 			return _.extend({}, DEFAULTS, scene);
 		}).then(function (scene) {
 			// Values converted to array.
-			['steps'].forEach(function (toArray) {
+			['actors', 'observers'].forEach(function (toArray) {
 				if (!Array.isArray(scene[toArray])) {
 					scene[toArray] = [scene[toArray]];
 				}
@@ -26,8 +26,8 @@ module.exports.Scene = {
 			return scene;
 		}).then(function (scene) {
 			// Resources looked up by wildcard.
-			return Q.nfcall(glob, scene.stories, {}).then(function (stories) {
-				scene.stories = stories;
+			return Q.nfcall(glob, scene.scenarios, {}).then(function (scenarios) {
+				scene.scenarios = scenarios;
 				return scene;
 			});
 		});

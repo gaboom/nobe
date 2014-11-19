@@ -4,7 +4,7 @@ var Q = require('q');
 
 // Require dependencies
 function prepare(scene) {
-  ['interpreter', 'actors'].forEach(function(setting) {
+  ['interpreter', 'actors', 'observers'].forEach(function(setting) {
     if (Array.isArray(scene[setting])) {
       var dependencies = [];
       scene[setting].forEach(function(dependency) {
@@ -20,12 +20,11 @@ function prepare(scene) {
 
 // Interpret each stories into a scenario
 function interpret(scene) {
-  var stories = scene.stories.map(function(story) {
-    return Q.fcall(scene.interpreter, story);
+  var scenarioResources = scene.scenarios.map(function(scenarioResource) {
+    return Q.fcall(scene.interpreter, scenarioResource);
   });
-  return Q.all(stories).then(function() {
-    scene.scenarios = arguments;
-    return scene;
+  return Q.all(scenarioResources).then(function(scenarios) {
+    console.log(scenarios);
   });
 }
 

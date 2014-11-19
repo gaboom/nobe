@@ -23,6 +23,7 @@ if (require.main === module) {
 	var args = process.argv.slice(2);
 	var settings = minimist(args);
 
+	// If not disabled explicitly turn on Q's long stack support
 	if (typeof settings !== 'object' || settings.longStackSupport === undefined || !!settings.longStackSupport) {
 		Q.longStackSupport = true;
 	}
