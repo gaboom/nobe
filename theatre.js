@@ -12,7 +12,7 @@ function prepare(scene) {
       });
       scene[setting] = dependencies;
     } else {
-      scene[setting] = require(scene[setting]);
+      scene[setting] = require(scene[setting], undefined, 2);
     }
   });
   return scene;
@@ -21,10 +21,12 @@ function prepare(scene) {
 // Interpret each stories into a scenario
 function interpret(scene) {
   var scenarioResources = scene.scenarios.map(function(scenarioResource) {
-    return Q.fcall(scene.interpreter, scenarioResource);
+    return Q.fcall(scene.interpreter, scenarioResource).catch(function(error){
+	    throw new Error('Interpretation of ' + scenarioResource + ' failed because ' + (error && error.stack ? '\n' + error.stack : error));
+    });
   });
   return Q.all(scenarioResources).then(function(scenarios) {
-    console.log(scenarios);
+    console.log(JSON.stringify(scenarios, null, ' '));
   });
 }
 
