@@ -70,9 +70,9 @@ function render(markdown, ref, level) {
       case 'bulletlist':
       case 'numberlist':
       case 'listitem':
-        result = markdown.map(function(step) {
-          return render(step, ref, level);
-        });
+        result = markdown.reduce(function(steps, step) {
+          return steps.concat(render(step, ref, level));
+        }, []);
         break;
       default:
         throw new Error("Unsupported Markdown " + type);
