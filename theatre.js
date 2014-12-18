@@ -12,7 +12,7 @@ function prepare(scene) {
       });
       scene[setting] = dependencies;
     } else {
-      scene[setting] = require(scene[setting], undefined, 2);
+      scene[setting] = require(scene[setting]);
     }
   });
   return scene;
