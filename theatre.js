@@ -21,8 +21,8 @@ function prepare(scene) {
 // Interpret each stories into a scenario
 function interpret(scene) {
   var scenarioResources = scene.scenarios.map(function(scenarioResource) {
-    return Q.fcall(scene.interpreter, scenarioResource).catch(function(error){
-	    throw new Error('Interpretation of ' + scenarioResource + ' failed because ' + (error && error.stack ? '\n' + error.stack : error));
+    return Q.fcall(scene.interpreter, scenarioResource).catch(function(error) {
+      throw new Error('Interpretation of ' + scenarioResource + ' failed because ' + (error && error.stack ? '\n' + error.stack : error));
     });
   });
   return Q.all(scenarioResources).then(function(scenarios) {
@@ -30,8 +30,6 @@ function interpret(scene) {
   });
 }
 
-module.exports.Theatre = {
-  play: function(scene) {
-    return Q.when(scene).then(prepare).then(interpret);
-  }
+module.exports = function(scene) {
+  return Q.when(scene).then(prepare).then(interpret);
 };

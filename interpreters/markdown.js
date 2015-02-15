@@ -3,7 +3,7 @@
 var Q = require('q');
 
 var fs = require('fs');
-var markdown = require('markdown').markdown;
+var parser = require('markdown').markdown;
 
 function reduceStep(result, step) {
   result.steps.push({
@@ -91,14 +91,14 @@ function render(markdown, ref, level) {
 }
 
 module.exports = function interpret(resource) {
-  return Q.when(resource).then(function() {
+  return Q.when(resource).then(function(input) {
     // Read resource
-    return Q.nfcall(fs.readFile, resource);
+    return Q.nfcall(fs.readFile, input);
   }).then(function(buffer) {
     // Parse markdown
-    return markdown.parse(buffer.toString());
+    return parser.parse(buffer.toString());
   }).then(function(markdown) {
     // Render from Markdown JsonML flat list to scenario hierarchy
-    return render(markdown, resource);
+    return render(markdown, resource.toString(), 0);
   });
 };
