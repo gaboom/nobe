@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var Q = require('q');
 
@@ -7,7 +7,7 @@ var parser = require('markdown').markdown;
 
 function reduceStep(result, step) {
   result.steps.push({
-    $: "STEP",
+    $: 'STEP',
     ref: result.ref,
     match: step[1]
   });
@@ -40,11 +40,11 @@ function renderx(result, step) {
       step.shift();
       step.reduce(reduceStep, result);
       break;
-    case "para":
+    case 'para':
       reduceStep(result, step);
       break;
     default:
-      throw Error("Unexpected Markdown " + type);
+      throw Error('Unexpected Markdown ' + type);
   }
   return result;
 }
@@ -75,7 +75,7 @@ function render(markdown, ref, level) {
         }, []);
         break;
       default:
-        throw new Error("Unsupported Markdown " + type);
+        throw new Error('Unsupported Markdown ' + type);
     }
   } else {
     result = {
@@ -85,7 +85,7 @@ function render(markdown, ref, level) {
     };
   }
   if (result === undefined) {
-    throw new Error("Unsupported Markdown " + markdown);
+    throw new Error('Unsupported Markdown ' + markdown);
   }
   return result;
 }

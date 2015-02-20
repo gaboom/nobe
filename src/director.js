@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
 var Q = require('q');
 
-var scene = require("./scene");
+var scene = require('./scene');
 var theatre = require('./theatre');
 
 module.exports= function(settings) {

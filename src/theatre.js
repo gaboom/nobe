@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var Q = require('q');
 
@@ -22,7 +22,7 @@ function prepare(scene) {
 function interpret(scene) {
   var scenarioResources = scene.scenarios.map(function(scenarioResource) {
     return Q.fcall(scene.interpreter, scenarioResource).catch(function(error) {
-      throw new Error('Interpretation of ' + scenarioResource + ' failed because ' + (error && error.stack ? '\n' + error.stack : error));
+      throw new Error('Interpretation of ' + scenarioResource + ' failed because ' + error && error.stack ? '\n' + error.stack : error);
     });
   });
   return Q.all(scenarioResources).then(function(scenarios) {
