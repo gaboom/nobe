@@ -4,7 +4,7 @@
   "description": "Simple DSL runner for task automation.",
   "main": "nobe.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jshint --verbose --show-non-errors src/"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,6 @@
   },
   "devDependencies": {
     "mocha": "~2.0.1",
-    "jshint": "~2.5.10"
+    "jshint": "~2.6.0"
   }
 }
